@@ -127,8 +127,8 @@ def variant_a(night):
         parts.append(f"<g fill='#ffcf6e'>{''.join(lights)}</g>")
         style += (".w0{animation:wl 7s steps(1) infinite}.w1{animation:wl 11s steps(1) infinite 3s}"
                   "@keyframes wl{60%{opacity:.15}}")
-    parts.append(f"<text x='64' y='112' font-family='SG,sans-serif' font-weight='700' font-size='68' fill='{p['text']}'>Diego Rangel</text>"
-                 f"<text x='66' y='156' font-family='SG,sans-serif' font-weight='700' font-size='26' fill='{p['text']}' opacity='.85'>Full-Stack Lead Developer</text>")
+    parts.append(f"<text x='60' y='100' font-family='SG,sans-serif' font-weight='700' font-size='84' fill='{p['text']}'>Diego Rangel</text>"
+                 f"<text x='63' y='146' font-family='SG,sans-serif' font-weight='700' font-size='36' fill='{p['text']}' opacity='.9'>Full-Stack Lead Developer</text>")
     return svg("".join(parts), style)
 
 
