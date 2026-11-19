@@ -70,10 +70,12 @@ def scene(night, w, h, text, animated=True, label="Diego Rangel, Full-Stack Lead
         az, el = LAND[name]
         return (az - AZ0) / (AZ1 - AZ0) * w, base - el * 24
     (lx, ly), (ux, uy) = station("lowerStation"), station("upperStation")
-    parts.append(f"<path id='cable' d='M{lx:.0f},{ly:.0f} L{ux:.0f},{uy:.0f}' stroke='{p['cable']}' stroke-width='1' opacity='.6'/>"
-                 f"<rect x='-5' y='-4' width='10' height='8' rx='2' fill='{p['amber']}'>"
-                 "<animateMotion dur='18s' repeatCount='indefinite' keyPoints='0;1;0' keyTimes='0;.5;1' calcMode='linear'>"
-                 "<mpath href='#cable'/></animateMotion></rect>")
+    parts.append(f"<path d='M{lx:.0f},{ly:.0f} L{ux:.0f},{uy:.0f}' stroke='{p['cable']}' stroke-width='1' opacity='.6'/>"
+                 f"<rect class='cab' x='-5' y='-4' width='10' height='8' rx='2' fill='{p['amber']}' "
+                 f"transform='translate({lx:.0f} {ly:.0f})'/>")
+    # CSS rather than SMIL, so the reduced-motion rule below also stops the cabin.
+    style += (".cab{animation:cab 18s linear infinite}"
+              f"@keyframes cab{{0%,100%{{transform:translate({lx:.0f}px,{ly:.0f}px)}}50%{{transform:translate({ux:.0f}px,{uy:.0f}px)}}}}")
 
     x, buildings, lights = 0, [], []
     while x < w:
@@ -112,8 +114,6 @@ def card_text(name, lines):
         out = [f"<text x='72' y='150' font-family='SG,sans-serif' font-weight='700' font-size='96' fill='{p['text']}'>{name}</text>"]
         out += [f"<text x='76' y='{222 + i * 46}' font-family='SG,sans-serif' font-weight='700' font-size='34' "
                 f"fill='{p['text']}' opacity='.88'>{line}</text>" for i, line in enumerate(lines)]
-        out.append(f"<text x='76' y='{222 + len(lines) * 46 + 18}' font-family='SG,sans-serif' font-weight='700' "
-                   f"font-size='24' fill='{p['amber']}'>github.com/Starloss · Diego Rangel</text>")
         return "".join(out)
     return text
 
@@ -136,12 +136,13 @@ def render_png(svg_path, png_path, w, h):
     chrome = next((c for c in (shutil.which("chrome"), shutil.which("google-chrome"),
                                r"C:\Program Files\Google\Chrome\Application\chrome.exe") if c and Path(c).exists()), None)
     if not chrome:
-        print(f"skip {png_path.name}: Chrome not found")
-        return
+        print(f"skip {png_path.name}: Chrome not found, kept {svg_path.name}")
+        return False
     with tempfile.TemporaryDirectory() as profile:
         subprocess.run([chrome, "--headless=new", "--disable-gpu", "--hide-scrollbars", f"--user-data-dir={profile}",
                         f"--window-size={w},{h}", f"--screenshot={png_path}", svg_path.resolve().as_uri()],
                        check=True, capture_output=True)
+    return True
 
 
 def main():
@@ -152,8 +153,8 @@ def main():
         svg_path = ASSETS / "social" / f"{repo}.svg"
         svg_path.write_text(scene(True, 1280, 640, card_text(repo, lines), animated=False,
                                   label=f"{repo} by Diego Rangel"), encoding="utf-8")
-        render_png(svg_path, svg_path.with_suffix(".png"), 1280, 640)
-        svg_path.unlink()
+        if render_png(svg_path, svg_path.with_suffix(".png"), 1280, 640):
+            svg_path.unlink()
     for f in sorted(ASSETS.rglob("*.*")):
         print(f"{f.relative_to(ROOT)}: {f.stat().st_size / 1024:.0f} KB")
 

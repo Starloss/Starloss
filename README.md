@@ -12,7 +12,7 @@
     <td align="center"><h3>8+</h3><sub>years of<br>experience</sub></td>
     <td align="center"><h3>10+</h3><sub>developers<br>led</sub></td>
     <td align="center"><h3>−80%</h3><sub>hotel<br>booking time</sub></td>
-    <td align="center"><h3>5 → 0</h3><sub>critical day-1<br>errors</sub></td>
+    <td align="center"><h3>5 → 0</h3><sub>critical day-1<br>errors per release</sub></td>
   </tr>
 </table>
 </div>
@@ -50,13 +50,13 @@
     <td width="50%" valign="top">
       <a href="https://www.diegorangel.dev/en/projects/superwallet"><img src="assets/featured/superwallet.jpg" alt="SuperWallet sign-up screen" width="100%"></a>
       <h3>SuperWallet</h3>
-      Travel bookings in a crypto wallet, with hotel booking time cut by 80%.<br><br>
+      Travel bookings in a crypto wallet, −80% booking time.<br><br>
       <a href="https://www.diegorangel.dev/en/projects/superwallet">Read case study →</a>
     </td>
     <td width="50%" valign="top">
       <a href="https://www.diegorangel.dev/en/projects/be-booking-engine"><img src="assets/featured/be-booking-engine.jpg" alt="BE - Booking Engine bookings list" width="100%"></a>
       <h3>BE - Booking Engine</h3>
-      Booking-to-billing platform for medical interpreting in the US.<br><br>
+      Booking-to-billing for US medical interpreting.<br><br>
       <a href="https://www.diegorangel.dev/en/projects/be-booking-engine">Read case study →</a>
     </td>
   </tr>
@@ -76,10 +76,10 @@ Open-source projects are pinned below.
 
 Open to lead roles: remote, or relocation.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-diegorangel.dev-2f6b4f?style=flat&labelColor=14231c)](https://www.diegorangel.dev/en)
-[![CV](https://img.shields.io/badge/CV-PDF-2f6b4f?style=flat&labelColor=14231c)](https://www.diegorangel.dev/cv-diego-rangel-en.pdf)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-diego--rangel--de--ornelas-2f6b4f?style=flat&labelColor=14231c)](https://www.linkedin.com/in/diego-rangel-de-ornelas)
-[![Email](https://img.shields.io/badge/Email-contact%40diegorangel.dev-2f6b4f?style=flat&labelColor=14231c)](mailto:contact@diegorangel.dev)
+[![Portfolio](https://img.shields.io/badge/Portfolio-2f6b4f?style=flat)](https://www.diegorangel.dev/en)
+[![CV (PDF)](https://img.shields.io/badge/CV_(PDF)-2f6b4f?style=flat)](https://www.diegorangel.dev/cv-diego-rangel-en.pdf)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-2f6b4f?style=flat)](https://www.linkedin.com/in/diego-rangel-de-ornelas)
+[![Email](https://img.shields.io/badge/Email-2f6b4f?style=flat)](mailto:contact@diegorangel.dev)
 
 ---
 
