@@ -9,10 +9,10 @@
 <div align="center">
 <table>
   <tr>
-    <td align="center"><h3>8+</h3>years of experience</td>
-    <td align="center"><h3>10+</h3>developers led</td>
-    <td align="center"><h3>−80%</h3>hotel booking time</td>
-    <td align="center"><h3>5 → 0</h3>critical day-1 errors<br>per release</td>
+    <td align="center"><h3>8+</h3><sub>years of<br>experience</sub></td>
+    <td align="center"><h3>10+</h3><sub>developers<br>led</sub></td>
+    <td align="center"><h3>−80%</h3><sub>hotel<br>booking time</sub></td>
+    <td align="center"><h3>5 → 0</h3><sub>critical day-1<br>errors</sub></td>
   </tr>
 </table>
 </div>
